@@ -1,8 +1,32 @@
 <template>
-  <router-view />
+  <div class="content">
+    <nav-bar class="nav-bar"></nav-bar>
+    <router-view />
+    <total-bar class="foot"></total-bar>
+  </div>
 </template>
 
+<script setup>
+import totalBar from "./components/totalBar.vue";
+import navBar from "./components/navBar.vue";
+</script>
+
 <style>
+/* .content {
+  position: relative;
+} */
+
+.foot {
+  position: fixed;
+  bottom: 0;
+}
+
+.nav-bar {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -21,6 +45,9 @@ nav a {
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: #0f1f18;
+}
+html {
+  scroll-behavior: smooth;
 }
 </style>

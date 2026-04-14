@@ -3,26 +3,30 @@
     <button
       v-for="(category, i) in categories"
       :key="i"
-      @click="emit('update:dataFilter', category)"
+      @click="selectCategory = category"
     >
       {{ category }}
     </button>
-    <div>
-      <cartSympol></cartSympol>
-    </div>
+    <div></div>
   </div>
 </template>
 
 <script setup>
-import { defineProps, defineEmits } from "vue";
-import cartSympol from "./cartSympol.vue";
+// import { defineProps, defineEmits } from "vue";
 
-defineProps({
-  categories: {
-    type: Array,
-    default: () => [],
-  },
-});
+import { UseProductsStore } from "@/stores/useProductsStore";
 
-const emit = defineEmits(["update:dataFilter"]);
+import { storeToRefs } from "pinia";
+
+const productStore = UseProductsStore();
+const { categories, selectCategory } = storeToRefs(productStore);
+
+// defineProps({
+//   categories: {
+//     type: Array,
+//     default: () => [],
+//   },
+// });
+
+// const emit = defineEmits(["update:dataFilter"]);
 </script>
