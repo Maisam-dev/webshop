@@ -1,5 +1,5 @@
 <template>
-  <div v-if="productPage">
+  <div class="product-content" v-if="productPage">
     <img :src="productPage.images" alt="" />
     <div>
       <section>
@@ -23,3 +23,12 @@ import { storeToRefs } from "pinia";
 const productStore = UseProductsStore();
 const { productPage } = storeToRefs(productStore);
 </script>
+<style scoped>
+.product-content {
+  background-color: var(--background);
+  display: flex;
+  img {
+    max-width: 35%;
+  }
+}
+</style>
