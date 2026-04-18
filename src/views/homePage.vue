@@ -2,14 +2,15 @@
   <div class="homeContent">
     <filterBar class="filterBar"></filterBar>
     <h1>home page</h1>
-    <div v-if="displayProducts">
+
+    <div v-if="displayProducts" class="card-content">
       <productCard
+        class="card"
         v-for="product in displayProducts"
         :key="product.id"
         :product="product"
       ></productCard>
     </div>
-
     <p v-else>loding..</p>
   </div>
 </template>
@@ -69,13 +70,14 @@ onMounted(async () => {
 });
 </script>
 <style scoped>
-.homeContent {
-  position: relative;
-}
-
-.filterBar {
-  position: fixed;
-  top: 100px;
-  z-index: 9000;
+/* .homeContent {
+  margin-top: 107px;
+} */
+.card-content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  width: 100%;
 }
 </style>

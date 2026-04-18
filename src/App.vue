@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div>
     <nav-bar class="nav-bar"></nav-bar>
     <router-view />
     <total-bar class="foot"></total-bar>
@@ -12,17 +12,13 @@ import navBar from "./components/navBar.vue";
 </script>
 
 <style>
-/* .content {
-  position: relative;
-} */
-
 .foot {
   position: fixed;
   bottom: 0;
 }
 
 .nav-bar {
-  position: fixed;
+  position: sticky;
   top: 0;
   z-index: 1000;
 }
@@ -33,19 +29,20 @@ import navBar from "./components/navBar.vue";
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background-color: var(--background);
 }
 
-nav {
+/* nav {
   padding: 30px;
-}
+} */
 
-nav a {
+/* nav a {
   font-weight: bold;
   color: #2c3e50;
-}
+} */
 
 nav a.router-link-exact-active {
-  color: #0f1f18;
+  color: #021d11;
 }
 html {
   scroll-behavior: smooth;

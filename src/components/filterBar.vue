@@ -7,7 +7,6 @@
     >
       {{ category }}
     </button>
-    <div></div>
   </div>
 </template>
 
@@ -30,3 +29,24 @@ const { categories, selectCategory } = storeToRefs(productStore);
 
 // const emit = defineEmits(["update:dataFilter"]);
 </script>
+<style scoped>
+div {
+  position: sticky;
+  top: 62px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  border: 5px solid var(--border);
+  border-radius: 15px;
+  padding: 5px;
+  color: var(--text-color);
+}
+
+button {
+  background-color: var(--button);
+  padding: 5px;
+  border-radius: 15px;
+  color: white;
+}
+</style>

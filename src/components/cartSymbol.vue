@@ -1,7 +1,7 @@
 <template>
   <div @click="router.push({ name: 'cartPage' })">
-    <p class="count">{{ totalCount }}</p>
     <img src="../assets/shopping_cart.png" />
+    <p class="count">{{ totalCount }}</p>
   </div>
 </template>
 
@@ -22,18 +22,25 @@ const router = useRouter();
 
 <style scoped>
 img {
-  width: 25px;
+  width: 40px;
   height: 25px;
 }
 div {
   display: flex;
   flex-direction: row;
-  width: 50px;
+  align-items: center;
+  width: 40px;
   height: 50px;
+  position: relative;
 }
 .count {
-  height: 25px;
-  margin-top: 0px;
+  height: 20px;
+  width: 20px;
+
   color: red;
+
+  position: absolute;
+  top: 2px;
+  left: 35%;
 }
 </style>

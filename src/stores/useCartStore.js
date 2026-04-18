@@ -10,9 +10,11 @@ export const useCartStore = defineStore("cart", {
 
   getters: {
     totalPrice() {
-      return this.displayProducts.reduce((total, p) => {
+      // const total = 0.0;
+      const total = this.displayProducts.reduce((total, p) => {
         return total + p.price * p.count;
       }, 0.0);
+      return total.toFixed(2);
     },
 
     totalCount(state) {
@@ -53,7 +55,11 @@ export const useCartStore = defineStore("cart", {
 
     decrement(id) {
       const item = this.products.find((p) => p.id === id);
-      item.count--;
+      if (item.count === 1) {
+        this.delete(id);
+      } else {
+        item.count--;
+      }
     },
     // setDisplayCartProducts() {
     //   this.displayProducts = getDisplayCartProducts.value;

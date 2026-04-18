@@ -1,0 +1,19 @@
+:root {
+  --bar: rgb(189, 141, 52);
+  /* --background: rgb(228, 216, 209); */
+  --background: #dee2e6;
+  --button: rgb(182, 143, 70);
+  --card: #ffffff;
+  --verfugBar: rgb(61, 129, 40);
+  --red: rgb(199, 82, 82);
+  --border: rgb(182, 143, 70);
+  --img-background: #e0e3e7;
+  --button-background: rgb(164, 164, 216);
+  --text-color: #616158;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}

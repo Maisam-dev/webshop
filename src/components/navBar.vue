@@ -16,17 +16,30 @@ import CartSymbol from "./cartSymbol.vue";
 .content {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  background-color: rgb(100, 174, 177);
+  flex-wrap: wrap;
+  background-color: var(--bar);
   border: 1px solid rgb(9, 48, 49);
-  border-radius: 20px;
-  margin-top: 10px;
+  border-radius: 15px;
+  margin: 1% 1%;
   width: 98%;
   nav {
     display: flex;
     gap: 20px;
-    width: 400px;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    min-width: 50%;
   }
+}
+nav > *:hover {
+  background-color: var(--button-background);
+  color: white;
+  border: 1px solid blue;
+  border-radius: 15px;
+  padding: 5px;
+  transform: scale(1.1);
+  transform: translateY(-3);
 }
 </style>
