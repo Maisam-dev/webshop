@@ -1,6 +1,11 @@
 <template>
   <div class="homeContent">
     <filterBar class="filterBar"></filterBar>
+    <transition name="fade">
+      <div v-if="show" class="message">
+        {{ message }}
+      </div>
+    </transition>
     <h1>home page</h1>
 
     <div v-if="displayProducts" class="card-content">
@@ -9,6 +14,7 @@
         v-for="product in displayProducts"
         :key="product.id"
         :product="product"
+        @add-cart="showMessage('product added')"
       ></productCard>
     </div>
     <p v-else>loding..</p>
@@ -18,61 +24,28 @@
 <script setup>
 import productCard from "@/components/productCard.vue";
 import filterBar from "@/components/filterBar.vue";
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
 import { UseProductsStore } from "@/stores/useProductsStore";
 
 import { storeToRefs } from "pinia";
 
-// const { products, getProduct } = useProduct();
 const productStore = UseProductsStore();
-const { displayProducts } = storeToRefs(productStore);
+const { displayProducts, message } = storeToRefs(productStore);
+let show = ref(false);
 
-// const filterCategories = ref("All");
-// const productCount = ref(0);
-
-// provide("productCount", productCount);
-
-// function addCart() {
-//   productCount.value++;
-//   // puch id
-//   console.log(productCount.value);
-// }
-
-// const displayProducts = computed(() => {
-//   if (filterCategories.value === "All") {
-//     return products.value;
-//   } else {
-//     return products.value.filter((p) => p.category === filterCategories.value);
-//   }
-// });
-
-// function filterProducts(category) {
-//   console.log(category);
-//   // products.value = products.value.filter((p) => p.category === category);
-//   filterCategories.value = category;
-//   console.log("filterProducts");
-//   console.log(products.value);
-// }
-
-// const categories = computed(() => {
-//   // if (!products.value || products.value.length < 1) return ["All"];
-//   const categories = products.value?.map((p) => p.category);
-//   // console.log("computed");
-//   // console.log(categories);
-//   return ["All", ...new Set(categories)];
-// });
+const showMessage = (msg) => {
+  message.value = msg;
+  show.value = true;
+  setTimeout(() => (show.value = false), 3000);
+};
 
 onMounted(async () => {
   await productStore.getProducts();
-  // filterProducts("beauty");
-  // console.log(categories.value);
   console.log(displayProducts.value);
 });
 </script>
+
 <style scoped>
-/* .homeContent {
-  margin-top: 107px;
-} */
 .card-content {
   display: flex;
   justify-content: center;
@@ -80,4 +53,46 @@ onMounted(async () => {
   gap: 40px;
   width: 100%;
 }
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  color: gray;
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+/* .message {
+  position: fixed;
+  top: 15%;
+  right: 1%;
+  transition-duration: 2s;
+  animation-name: showMessage;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-range: initial;
+}
+
+@keyframes showMessage {
+  0% {
+    visibility: visible;
+
+    transform: translatey(30px);
+    background-color: var(--bar);
+    color: white;
+    box-shadow: 2px 3px gray;
+  }
+  100% {
+    transform: scale(1.1);
+    transform: translatex(-50px);
+    background-color: transparent;
+    color: gray;
+    box-shadow: 2px 3px gray;
+    visibility: hidden;
+  } */
+/* } */
 </style>

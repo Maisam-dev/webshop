@@ -6,6 +6,7 @@ export const UseProductsStore = defineStore("products", {
     selectCategory: "All",
     error: null,
     productPage: null,
+    message: "",
   }),
   getters: {
     displayProducts() {

@@ -13,7 +13,7 @@
         }}
       </p>
     </div>
-    <button :disabled="!product.stock > 0" @click="cartStore.add(product.id)">
+    <button :disabled="!product.stock > 0" @click="addProduct(product.id)">
       Add to Cart
     </button>
   </div>
@@ -23,20 +23,14 @@
 import { useCartStore } from "@/stores/useCartStore";
 import { UseProductsStore } from "@/stores/useProductsStore";
 import { storeToRefs } from "pinia";
-import { defineProps } from "vue";
+import { defineProps, defineEmits } from "vue";
 import { useRouter } from "vue-router";
 
 const cartStore = useCartStore();
 const productStore = UseProductsStore();
 const { productPage } = storeToRefs(productStore);
 const router = useRouter();
-
-function gotoProduct() {
-  productPage.value = props.product;
-
-  router.push({ name: "productPage" });
-  console.log(productPage.value);
-}
+const emit = defineEmits(["addCart"]);
 
 const props = defineProps({
   product: {
@@ -45,8 +39,19 @@ const props = defineProps({
   },
 });
 
-// const emit = defineEmits(["addCart"]);
+function gotoProduct() {
+  productPage.value = props.product;
+
+  router.push({ name: "productPage" });
+  console.log(productPage.value);
+}
+
+function addProduct(id) {
+  cartStore.add(id);
+  emit("addCart");
+}
 </script>
+
 <style scoped lang="scss">
 .card {
   background-color: var(--card);

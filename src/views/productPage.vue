@@ -27,6 +27,7 @@ const { productPage } = storeToRefs(productStore);
 .product-content {
   background-color: var(--background);
   display: flex;
+  flex-wrap: wrap;
   img {
     max-width: 35%;
   }
