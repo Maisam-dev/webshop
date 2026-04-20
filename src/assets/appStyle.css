@@ -1,6 +1,6 @@
-:root {
+/* :root {
   --bar: rgb(189, 141, 52);
-  /* --background: rgb(228, 216, 209); */
+  
   --background: #dee2e6;
   --button: rgb(182, 143, 70);
   --card: #ffffff;
@@ -10,7 +10,35 @@
   --img-background: #e0e3e7;
   --button-background: rgb(164, 164, 216);
   --text-color: #616158;
+}  */
+
+/* 
+:root {
+  --bar: #5c4033; 
+  --background: #f5f0eb; 
+  --button: #a0785a; 
+  --card: #fffdf9; 
+  --verfugBar: #6a8f6a; 
+  --red: #c0746a; 
+  --border: #ddd0c0; 
+  --img-background: #ede8e0; 
+  --button-background: #b8a99a;
+  --text-color: #3d2f27; 
+} */
+
+:root {
+  --bar: #2d7d6f; /* Navbar — تيل زمردي     */
+  --background: #f5f0eb; /* خلفية — بيج فاتح       */
+  --button: #4a9e8e; /* أزرار — بني دافئ       */
+  --card: #fffdf9; /* بطاقات — أبيض دافئ     */
+  --verfugBar: #6a8f6a; /* متوفر — أخضر هادئ      */
+  --red: #c0746a; /* نفد — أحمر ناعم        */
+  --border: #ddd0c0; /* حدود — بيج متوسط       */
+  --img-background: #ede8e0; /* خلفية صور              */
+  --button-background: #4a9e8e; /* زر ثانوي — تيل فاتح   */
+  --text-color: #3d2f27; /* نصوص — بني داكن        */
 }
+
 * {
   margin: 0;
   box-sizing: border-box;

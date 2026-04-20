@@ -36,7 +36,7 @@ import CartSymbol from "./cartSymbol.vue";
 nav > *:hover {
   background-color: var(--button-background);
   color: white;
-  border: 1px solid blue;
+  border: 1px solid var(--border);
   border-radius: 15px;
   padding: 5px;
   transform: scale(1.1);

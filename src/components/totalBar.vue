@@ -15,10 +15,11 @@ import { storeToRefs } from "pinia";
 const cartStore = useCartStore();
 const { totalCount, totalPrice } = storeToRefs(cartStore);
 </script>
+
 <style scoped lang="scss">
 div#total-bar {
   background-color: var(--bar);
-
+  color: var(--text-color);
   display: flex;
   flex-direction: row-reverse;
   justify-content: start;

@@ -15,7 +15,7 @@
 </template>
 <style scoped lang="scss">
 .content {
-  margin: 30% 3%;
+  margin: 10% 3%;
 
   background-color: gray;
   color: white;
