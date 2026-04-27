@@ -5,9 +5,8 @@
       This web application was developed as a small example project to
       demonstrate my skills in modern web development. It reflects my effort,
       learning journey, and attention to detail in building functional and
-      user-friendly applications. I dedicate this work with appreciation and
-      respect to my wife, Bayan Abo Jaas, whose support and encouragement mean a
-      lot to me. <br />
+      user-friendly applications.
+      <br />
       maisam Akeel <br />
       maisam.a.akeel@gmail.com
     </article>

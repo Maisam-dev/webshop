@@ -1,6 +1,8 @@
 import { getDisplayCartProducts } from "@/service/cartService";
 import { UseProductsStore } from "./useProductsStore";
 import { defineStore, storeToRefs } from "pinia";
+// Toastification
+import { useToast } from "vue-toastification";
 
 export const useCartStore = defineStore("cart", {
   state: () => ({
@@ -32,6 +34,8 @@ export const useCartStore = defineStore("cart", {
   actions: {
     delete(id) {
       this.products = this.products.filter((p) => p.id !== id);
+      const toast = useToast();
+      toast.info("product deleted");
     },
 
     add(id) {

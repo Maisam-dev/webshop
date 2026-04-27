@@ -1,11 +1,6 @@
 <template>
   <div class="homeContent">
     <filterBar class="filterBar"></filterBar>
-    <transition name="fade">
-      <div v-if="show" class="message">
-        {{ message }}
-      </div>
-    </transition>
     <h1>home page</h1>
 
     <div v-if="displayProducts" class="card-content">
@@ -14,7 +9,7 @@
         v-for="product in displayProducts"
         :key="product.id"
         :product="product"
-        @add-cart="showMessage('product added')"
+        @add-cart="showMessage('product successfully added')"
       ></productCard>
     </div>
     <p v-else>loding..</p>
@@ -24,19 +19,20 @@
 <script setup>
 import productCard from "@/components/productCard.vue";
 import filterBar from "@/components/filterBar.vue";
-import { onMounted, ref } from "vue";
+import { onMounted } from "vue";
 import { UseProductsStore } from "@/stores/useProductsStore";
 
 import { storeToRefs } from "pinia";
 
+// Toastification
+import { useToast } from "vue-toastification";
+const toast = useToast();
+
 const productStore = UseProductsStore();
-const { displayProducts, message } = storeToRefs(productStore);
-let show = ref(false);
+const { displayProducts } = storeToRefs(productStore);
 
 const showMessage = (msg) => {
-  message.value = msg;
-  show.value = true;
-  setTimeout(() => (show.value = false), 3000);
+  toast.success(msg);
 };
 
 onMounted(async () => {

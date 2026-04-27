@@ -19,7 +19,9 @@
     >
     <div class="checkout">
       <p>total price ist {{ totalPrice }}</p>
-      <button @click="showAllert">check out ({{ totalCount }} item/s)</button>
+      <button @click="toast.error('No checkout available at the moment')">
+        check out ({{ totalCount }} item/s)
+      </button>
     </div>
   </div>
 </template>
@@ -29,13 +31,14 @@ import { useCartStore } from "@/stores/useCartStore";
 import { storeToRefs } from "pinia";
 // import { onMounted } from "vue";
 
+// Toastification
+import { useToast } from "vue-toastification";
+const toast = useToast();
+
 const cartStore = useCartStore();
 const { displayProducts, totalCount, totalPrice } = storeToRefs(cartStore);
-// onMounted(() => {
-//   cartStore.setDisplayCartProducts();
-// });
-const showAllert = () => alert("No checkout available at the moment");
 </script>
+
 <style scoped lang="scss">
 .cart {
   display: flex;
