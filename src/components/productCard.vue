@@ -79,7 +79,6 @@ img {
   max-width: 50%;
 }
 .card:hover {
-  // transform: translate(-10px, -5px);
   transform: scale(1.1);
 }
 </style>

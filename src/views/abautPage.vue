@@ -12,6 +12,7 @@
     </article>
   </div>
 </template>
+
 <style scoped lang="scss">
 .content {
   margin: 10% 3%;

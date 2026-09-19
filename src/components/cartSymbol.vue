@@ -14,10 +14,6 @@ const cartStore = useCartStore();
 const { totalCount } = storeToRefs(cartStore);
 
 const router = useRouter();
-
-// import { inject } from "vue";
-
-// const productCount = inject(["productCount"]);
 </script>
 
 <style scoped>

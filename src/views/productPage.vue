@@ -23,6 +23,7 @@ import { storeToRefs } from "pinia";
 const productStore = UseProductsStore();
 const { productPage } = storeToRefs(productStore);
 </script>
+
 <style scoped>
 .product-content {
   background-color: var(--background);

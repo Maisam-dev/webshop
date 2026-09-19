@@ -12,6 +12,7 @@
   --text-color: #616158;
 }  */
 
+/* yallow Style*/
 /* 
 :root {
   --bar: #5c4033; 
@@ -26,17 +27,18 @@
   --text-color: #3d2f27; 
 } */
 
+/*green Style*/
 :root {
-  --bar: #2d7d6f; /* Navbar — تيل زمردي     */
-  --background: #f5f0eb; /* خلفية — بيج فاتح       */
-  --button: #4a9e8e; /* أزرار — بني دافئ       */
-  --card: #fffdf9; /* بطاقات — أبيض دافئ     */
-  --verfugBar: #6a8f6a; /* متوفر — أخضر هادئ      */
-  --red: #c0746a; /* نفد — أحمر ناعم        */
-  --border: #ddd0c0; /* حدود — بيج متوسط       */
-  --img-background: #ede8e0; /* خلفية صور              */
-  --button-background: #4a9e8e; /* زر ثانوي — تيل فاتح   */
-  --text-color: #312721; /* نصوص — بني داكن        */
+  --bar: #2d7d6f;
+  --background: #f5f0eb;
+  --button: #4a9e8e;
+  --card: #fffdf9;
+  --verfugBar: #6a8f6a;
+  --red: #c0746a;
+  --border: #ddd0c0;
+  --img-background: #ede8e0;
+  --button-background: #4a9e8e;
+  --text-color: #312721;
 }
 
 * {

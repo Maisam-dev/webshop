@@ -8,6 +8,7 @@
     <CartSymbol></CartSymbol>
   </div>
 </template>
+
 <script setup>
 import CartSymbol from "./cartSymbol.vue";
 </script>

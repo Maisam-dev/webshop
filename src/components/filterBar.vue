@@ -19,16 +19,8 @@ import { storeToRefs } from "pinia";
 
 const productStore = UseProductsStore();
 const { categories, selectCategory } = storeToRefs(productStore);
-
-// defineProps({
-//   categories: {
-//     type: Array,
-//     default: () => [],
-//   },
-// });
-
-// const emit = defineEmits(["update:dataFilter"]);
 </script>
+
 <style scoped>
 div {
   position: sticky;
