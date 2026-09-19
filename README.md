@@ -1,3 +1,8 @@
+## 🚀 Live Demo
+
+You can check out the live working application here:
+👉 **[View Live Webshop App] https://akeel-webshop.netlify.app /**
+
 # Webshop - Mini E-Commerce App
 
 A responsive, lightweight single-page e-commerce web application built with **Vue.js**. This project demonstrates dynamic product listing, category filtering, and shopping cart operations.
@@ -47,6 +52,8 @@ npm install
 npm run serve
 
 --Open your browser at http://localhost:8080/.
+
+
 
 ## Author
 Created by Maisam Akeel
